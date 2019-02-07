@@ -13,21 +13,24 @@ import re
 
 old_files = os.listdir(os.getcwd())
 
-jobname = str(Path().resolve()).split('/')[-1].split('_restart')[0]
-new_path = fbr.create_folder('../'+jobname+'_restart',increment=True)
+jobname = str(Path().resolve()).split("/")[-1].split("_restart")[0]
+new_path = fbr.create_folder("../" + jobname + "_restart", increment=True)
 
 for file in old_files:
-    if file in ['input.yaml','default.yaml','pbs'] or file.startswith('psppar'):
-        shutil.copy(file,new_path+'/'+file)
+    if file in ["input.yaml", "default.yaml", "pbs"] or file.startswith("psppar"):
+        shutil.copy(file, new_path + "/" + file)
 
-    elif file.startswith('data-neb'):
-        image_num = int(re.findall('\d+',file)[0])
+    elif file.startswith("data-neb"):
+        image_num = int(re.findall("\d+", file)[0])
         num = []
         data_files = os.listdir(file)
         for name in data_files:
-            if name.startswith('posout'):
-                num.append(int(re.findall('\d+',name)[0]))
-        shutil.copy(file+'/posout_{:04d}.ascii'.format(max(num)),new_path+'/posinp{:d}.ascii'.format(image_num))
+            if name.startswith("posout"):
+                num.append(int(re.findall("\d+", name)[0]))
+        shutil.copy(
+            file + "/posout_{:04d}.ascii".format(max(num)),
+            new_path + "/posinp{:d}.ascii".format(image_num),
+        )
 
     else:
         pass

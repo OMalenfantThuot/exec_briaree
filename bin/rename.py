@@ -11,4 +11,4 @@ names = os.listdir(os.getcwd())
 
 for name in names:
     if name.endswith(".in.ascii"):
-        os.rename(name,name.strip(".in.ascii")+".ascii")
+        os.rename(name, name.strip(".in.ascii") + ".ascii")

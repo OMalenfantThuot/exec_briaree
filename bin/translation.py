@@ -10,18 +10,18 @@ S'appelle comme un éxécutable
 """
 
 t = fbr.TabCompleter()
-readline.set_completer_delims('\t')
+readline.set_completer_delims("\t")
 readline.parse_and_bind("tab: complete")
 readline.set_completer(t.pathCompleter)
 
-infile = str(input('Entrer le nom du fichier à translater:\n'))
+infile = str(input("Entrer le nom du fichier à translater:\n"))
 
 Pos = fbr.Posinp()
 Pos.def_from_file(infile)
-outfile = 'out_'+infile.strip('.' + Pos.filetype)
+outfile = "out_" + infile.strip("." + Pos.filetype)
 
-delx = float(input('Translation en x (' + Pos.units + '):\n'))
-delz = float(input('Translation en z (' + Pos.units + '):\n'))
+delx = float(input("Translation en x (" + Pos.units + "):\n"))
+delz = float(input("Translation en z (" + Pos.units + "):\n"))
 
-Pos.translate(delx,0,delz)
-Pos.create_file(outfile,increment='True')
+Pos.translate(delx, 0, delz)
+Pos.create_file(outfile, increment="True")

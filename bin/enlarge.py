@@ -10,18 +10,18 @@ S'appelle comme un éxécutable
 """
 
 t = fbr.TabCompleter()
-readline.set_completer_delims('\t')
+readline.set_completer_delims("\t")
 readline.parse_and_bind("tab: complete")
-readline.set_completer(t.pathCompleter) 
+readline.set_completer(t.pathCompleter)
 
-infile = str(input('Entrer le nom du fichier a agrandir:\n'))
+infile = str(input("Entrer le nom du fichier a agrandir:\n"))
 
 Pos = fbr.Posinp()
 Pos.def_from_file(infile)
-outfile = 'out_'+infile.strip('.' + Pos.filetype)
+outfile = "out_" + infile.strip("." + Pos.filetype)
 
-xsize = int(input('Nouvelle taille en x:\n'))
-zsize = int(input('Nouvelle taille en z:\n'))
+xsize = int(input("Nouvelle taille en x:\n"))
+zsize = int(input("Nouvelle taille en z:\n"))
 
-Pos.enlarge_graphene_cell([xsize,zsize])
-Pos.create_file(outfile,increment='True')
+Pos.enlarge_graphene_cell([xsize, zsize])
+Pos.create_file(outfile, increment="True")
