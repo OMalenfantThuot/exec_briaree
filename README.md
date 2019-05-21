@@ -7,8 +7,6 @@
 
 Les executables sont dans le fichier bin/.
 
-aclocal-1.\* et automake-1.\* sont des liens symboliques (fonctionne seulement sur Briaree)
-
 createpbs.py: crée des fichiers de soumission de tache
 
 enlarge.py: prend un fichier position et l'agrandie (fonctionne pour les cellules de graphene générée avec le package functions\_briaree)
@@ -34,7 +32,5 @@ Le package python [functions\_briaree](https://github.com/OMalenfantThuot/functi
 ## Meta
 
 Olivier Malenfant-Thuot – malenfantthuotolivier@gmail.com
-
-Distributed under the XYZ license. See ``LICENSE`` for more information.
 
 [Github Profile](https://github.com/OMalenfantThuot)
